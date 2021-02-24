@@ -10,9 +10,11 @@ import UIKit
 
 class FeedViewController: UIViewController {
     
+    private let networkService = NetworkSetvice()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        networkService.getFeed()
         view.backgroundColor = .systemBlue
     }
 }

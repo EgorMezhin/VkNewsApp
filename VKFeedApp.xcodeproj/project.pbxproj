@@ -18,6 +18,8 @@
 		D0BC66D825E6D71B002D2421 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC66D725E6D71B002D2421 /* FeedViewController.swift */; };
 		D0BC66DA25E6D728002D2421 /* FeedViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0BC66D925E6D728002D2421 /* FeedViewController.storyboard */; };
 		D0BC66DD25E6D8FF002D2421 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC66BA25E6A3C0002D2421 /* SceneDelegate.swift */; };
+		D0BC66DF25E6EAA4002D2421 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC66DE25E6EAA4002D2421 /* NetworkService.swift */; };
+		D0BC66E125E6EB3A002D2421 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC66E025E6EB3A002D2421 /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -47,6 +49,8 @@
 		D0BC66D525E6CC46002D2421 /* AuthViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthViewController.storyboard; sourceTree = "<group>"; };
 		D0BC66D725E6D71B002D2421 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		D0BC66D925E6D728002D2421 /* FeedViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedViewController.storyboard; sourceTree = "<group>"; };
+		D0BC66DE25E6EAA4002D2421 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		D0BC66E025E6EB3A002D2421 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,8 @@
 			isa = PBXGroup;
 			children = (
 				D0BC66D225E6CA87002D2421 /* AuthService.swift */,
+				D0BC66DE25E6EAA4002D2421 /* NetworkService.swift */,
+				D0BC66E025E6EB3A002D2421 /* API.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -226,7 +232,9 @@
 				D0BC66BD25E6A3C0002D2421 /* AuthViewController.swift in Sources */,
 				D0BC66B925E6A3C0002D2421 /* AppDelegate.swift in Sources */,
 				D0BC66D825E6D71B002D2421 /* FeedViewController.swift in Sources */,
+				D0BC66DF25E6EAA4002D2421 /* NetworkService.swift in Sources */,
 				D0BC66D325E6CA87002D2421 /* AuthService.swift in Sources */,
+				D0BC66E125E6EB3A002D2421 /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
