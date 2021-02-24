@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zlY-iD-jFc">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Auth View Controller-->
+        <scene sceneID="ueP-FB-BM3">
+            <objects>
+                <viewController id="zlY-iD-jFc" customClass="AuthViewController" customModule="VKFeedApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JYM-8s-ilt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sc9-n1-x0p">
+                                <rect key="frame" x="122.5" y="422.5" width="169" height="61"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="ZPl-rB-GjG"/>
+                                    <constraint firstAttribute="width" constant="169" id="rAH-Ao-sqG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="29"/>
+                                <state key="normal" title="Log in VK"/>
+                                <connections>
+                                    <action selector="logInTouch:" destination="zlY-iD-jFc" eventType="touchUpInside" id="Pgb-v5-yjn"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Sc9-n1-x0p" firstAttribute="centerY" secondItem="qSe-hR-dnL" secondAttribute="centerY" id="UWm-zs-lzX"/>
+                            <constraint firstItem="Sc9-n1-x0p" firstAttribute="centerX" secondItem="qSe-hR-dnL" secondAttribute="centerX" id="dCg-rI-YKv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qSe-hR-dnL"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DgE-lb-dO3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="15.942028985507248" y="82.366071428571431"/>
+        </scene>
+    </scenes>
+</document>
