@@ -14,8 +14,8 @@ protocol NewsFeedPresentationLogic {
 
 class NewsFeedPresenter: NewsFeedPresentationLogic {
   weak var viewController: NewsFeedDisplayLogic?
-    let dateFormatter: DateFormatter = {
-        let dateFormatter = DateFormatter ()
+    var dateFormatter: DateFormatter {
+        let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "ru_RU")
         dateFormatter.dateFormat = "d MMM 'в' HH:mm"
         return dateFormatter
