@@ -44,6 +44,8 @@ class NewsFeedPresenter: NewsFeedPresentationLogic {
         
         let profile = self.profile(for: feedItem.sourceId, profiles: profiles, groups: groups)
         
+        let photoAttachment = self.photoAttachment(feedItem: feedItem)
+        
         return FeedViewModel.Cell.init(
             iconURLString: profile.photo,
             name: profile.name,
@@ -52,7 +54,9 @@ class NewsFeedPresenter: NewsFeedPresentationLogic {
             likeNumber: String(feedItem.likes?.count ?? 0),
             commentNumber: String(feedItem.comments?.count ?? 0),
             shareNumber: String(feedItem.reposts?.count ?? 0),
-            viewNumber: String(feedItem.views?.count ?? 0))
+            viewNumber: String(feedItem.views?.count ?? 0),
+            photoAttachment: photoAttachment)
+        
     }
 
     
@@ -64,5 +68,14 @@ class NewsFeedPresenter: NewsFeedPresentationLogic {
             myProfileRepresentable.id == normalSourceId
         }
         return profileRepresentable!
+    }
+    
+    private func photoAttachment(feedItem: FeedItem) -> FeedViewModel.FeedCellPhotoAttachment? {
+        guard let photos = feedItem.attachments?.compactMap({ (attachment) in
+            attachment.photo
+        }), let firstPhoto = photos.first else {
+            return nil
+        }
+        return FeedViewModel.FeedCellPhotoAttachment.init(photoUrlString: firstPhoto.url, width: firstPhoto.width, height: firstPhoto.height)
     }
 }
