@@ -14,6 +14,8 @@ protocol NewsFeedPresentationLogic {
 
 class NewsFeedPresenter: NewsFeedPresentationLogic {
   weak var viewController: NewsFeedDisplayLogic?
+    var cellLayoutCalculator: NewsFeedCellLayoutCalculatorProtocol = NewsFeedCellLayoutCalculator()
+    
     var dateFormatter: DateFormatter {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "ru_RU")
@@ -46,6 +48,9 @@ class NewsFeedPresenter: NewsFeedPresentationLogic {
         
         let photoAttachment = self.photoAttachment(feedItem: feedItem)
         
+        let sizes = cellLayoutCalculator.sizes(postText: feedItem.text, photoAttachment: photoAttachment)
+        
+     //   print(feedItem.comments?.count)
         return FeedViewModel.Cell.init(
             iconURLString: profile.photo,
             name: profile.name,
@@ -55,7 +60,8 @@ class NewsFeedPresenter: NewsFeedPresentationLogic {
             commentNumber: String(feedItem.comments?.count ?? 0),
             shareNumber: String(feedItem.reposts?.count ?? 0),
             viewNumber: String(feedItem.views?.count ?? 0),
-            photoAttachment: photoAttachment)
+            photoAttachment: photoAttachment,
+            sizes: sizes)
         
     }
 
