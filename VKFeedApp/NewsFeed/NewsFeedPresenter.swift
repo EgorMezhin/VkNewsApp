@@ -37,6 +37,7 @@ class NewsFeedPresenter: NewsFeedPresentationLogic {
         }
     }
     
+    
     private func cellViewModel(from feedItem: FeedItem, profiles: [Profile], groups: [Group], revealPostIds: [Int]) -> FeedViewModel.Cell {
         let date = Date(timeIntervalSince1970: feedItem.date)
         let dateTitle = dateFormatter.string(from: date)
@@ -44,18 +45,29 @@ class NewsFeedPresenter: NewsFeedPresentationLogic {
         let photoAttachments = self.photoAttachments(feedItem: feedItem)
         let isFullSize = revealPostIds.contains(feedItem.postId)
         let sizes = cellLayoutCalculator.sizes(postText: feedItem.text, photoAttachments: photoAttachments, isFullSizePost: isFullSize)
+        
+          let postText = feedItem.text?.replacingOccurrences(of: "<br>", with: "\n")
         return FeedViewModel.Cell.init(
             postId: feedItem.postId,
             iconURLString: profile.photo,
             name: profile.name,
             date: dateTitle,
-            text: feedItem.text,
-            likeNumber: String(feedItem.likes?.count ?? 0),
-            commentNumber: String(feedItem.comments?.count ?? 0),
-            shareNumber: String(feedItem.reposts?.count ?? 0),
-            viewNumber: String(feedItem.views?.count ?? 0),
+            text: postText,
+            likeNumber: formattedCounter(feedItem.likes?.count),
+            commentNumber: formattedCounter(feedItem.comments?.count),
+            shareNumber: formattedCounter(feedItem.reposts?.count),
+            viewNumber: formattedCounter(feedItem.views?.count),
             photoAttachments: photoAttachments,
             sizes: sizes)
+    }
+    
+    private func formattedCounter(_ counter: Int?) -> String? {
+        guard let counter = counter else { return nil }
+        var counterString = String(counter)
+        if counterString.count <= 6 && counterString.count >= 4 {
+            counterString = String(counterString.dropLast(3)) + "K"
+        }
+        return counterString
     }
     
     private func profile(for sourceId: Int, profiles: [Profile], groups: [Group]) -> ProfileRepresentable {
