@@ -53,6 +53,8 @@ final class NewsFeedCodeCell: UITableViewCell {
     }()
     
     
+    let galleryCollectionView = GalleryCollectionView()
+    
     let postImageView: WebImageView = {
         let imageView = WebImageView()
 //        imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -227,16 +229,23 @@ shareLabel.text = viewModel.shareNumber
 viewLabel.text = viewModel.viewNumber
         postLabel.frame = viewModel.sizes.postLabelFrame
         moreTextButton.frame = viewModel.sizes.moreTextButtonFrame  
-        postImageView.frame = viewModel.sizes.attachmentFrame
+      
         bottomView.frame = viewModel.sizes.bottomViewFrame
         
-        
-        
-        if let photoAttachment = viewModel.photoAttachment {
-          postImageView.set(imageUrl: photoAttachment.photoUrlString)
+    
+        if let photoAttachment = viewModel.photoAttachments.first, viewModel.photoAttachments.count == 1 {
+         postImageView.set(imageUrl: photoAttachment.photoUrlString)
             postImageView.isHidden = false
+            galleryCollectionView.isHidden = true
+              postImageView.frame = viewModel.sizes.attachmentFrame
+        } else if viewModel.photoAttachments.count > 1 {
+            galleryCollectionView.frame = viewModel.sizes.attachmentFrame
+            postImageView.isHidden = true
+            galleryCollectionView.isHidden = false
+            galleryCollectionView.set(photos: viewModel.photoAttachments)
         } else {
             postImageView.isHidden = true
+            galleryCollectionView.isHidden = true
         }
     }
     
@@ -251,6 +260,7 @@ viewLabel.text = viewModel.viewNumber
         cardView.addSubview(postLabel)
         cardView.addSubview(moreTextButton)
         cardView.addSubview(postImageView)
+        cardView.addSubview(galleryCollectionView)
         cardView.addSubview(bottomView)
 
         

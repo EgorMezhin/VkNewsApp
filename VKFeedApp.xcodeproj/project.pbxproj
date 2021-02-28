@@ -35,6 +35,9 @@
 		D0BC670425EAE4A4002D2421 /* NewsFeedCodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC670325EAE4A4002D2421 /* NewsFeedCodeCell.swift */; };
 		D0BC670825EAEEEC002D2421 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC670725EAEEEC002D2421 /* Constraints.swift */; };
 		D0BC670A25EAF3B6002D2421 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC670925EAF3B6002D2421 /* Constants.swift */; };
+		D0BC670D25EBEE2C002D2421 /* GalleryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC670C25EBEE2C002D2421 /* GalleryCollectionView.swift */; };
+		D0BC670F25EBEEDF002D2421 /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC670E25EBEEDF002D2421 /* GalleryCollectionViewCell.swift */; };
+		D0BC671125EBFA35002D2421 /* RowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC671025EBFA35002D2421 /* RowLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -81,6 +84,9 @@
 		D0BC670325EAE4A4002D2421 /* NewsFeedCodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedCodeCell.swift; sourceTree = "<group>"; };
 		D0BC670725EAEEEC002D2421 /* Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constraints.swift; path = "../../../../../../Volumes/Lass_USB/swiftbook/Нужно/22. VK News Feed App/20. NSLayoutAnchor and Anchor Extension/19 урок/VKNewsFeed/Helpers/Constraints.swift"; sourceTree = "<group>"; };
 		D0BC670925EAF3B6002D2421 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D0BC670C25EBEE2C002D2421 /* GalleryCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionView.swift; sourceTree = "<group>"; };
+		D0BC670E25EBEEDF002D2421 /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
+		D0BC671025EBFA35002D2421 /* RowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +176,7 @@
 		D0BC66E725E81179002D2421 /* NewsFeed */ = {
 			isa = PBXGroup;
 			children = (
+				D0BC670B25EBEE15002D2421 /* GalleryView */,
 				D0BC66F825E830D0002D2421 /* Cell */,
 				D0BC66F625E816E6002D2421 /* NewsFeedViewController.storyboard */,
 				D0BC66EC25E811DF002D2421 /* NewsFeedViewController.swift */,
@@ -192,6 +199,16 @@
 				D0BC66FF25EAB744002D2421 /* NewsFeedCellLayoutCalculator.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		D0BC670B25EBEE15002D2421 /* GalleryView */ = {
+			isa = PBXGroup;
+			children = (
+				D0BC670C25EBEE2C002D2421 /* GalleryCollectionView.swift */,
+				D0BC671025EBFA35002D2421 /* RowLayout.swift */,
+				D0BC670E25EBEEDF002D2421 /* GalleryCollectionViewCell.swift */,
+			);
+			path = GalleryView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,10 +307,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0BC671125EBFA35002D2421 /* RowLayout.swift in Sources */,
 				D0BC66E425E7211E002D2421 /* FeedResponse.swift in Sources */,
 				D0BC66EF25E811DF002D2421 /* NewsFeedPresenter.swift in Sources */,
 				D0BC670425EAE4A4002D2421 /* NewsFeedCodeCell.swift in Sources */,
 				D0BC66DD25E6D8FF002D2421 /* SceneDelegate.swift in Sources */,
+				D0BC670F25EBEEDF002D2421 /* GalleryCollectionViewCell.swift in Sources */,
 				D0BC66BD25E6A3C0002D2421 /* AuthViewController.swift in Sources */,
 				D0BC66F425E811DF002D2421 /* NewsFeedInteractor.swift in Sources */,
 				D0BC66B925E6A3C0002D2421 /* AppDelegate.swift in Sources */,
@@ -309,6 +328,7 @@
 				D0BC670225EACC35002D2421 /* StringPlusHeight.swift in Sources */,
 				D0BC66F225E811DF002D2421 /* NewsFeedModels.swift in Sources */,
 				D0BC66FA25E830E1002D2421 /* NewsFeedCell.swift in Sources */,
+				D0BC670D25EBEE2C002D2421 /* GalleryCollectionView.swift in Sources */,
 				D0BC66F325E811DF002D2421 /* NewsFeedViewController.swift in Sources */,
 				D0BC670025EAB744002D2421 /* NewsFeedCellLayoutCalculator.swift in Sources */,
 			);
