@@ -27,6 +27,7 @@ protocol FeedCellSizes {
     var attachmentFrame: CGRect { get }
     var bottomViewFrame: CGRect { get }
     var totalHeight: CGFloat { get }
+    var moreTextButtonFrame: CGRect { get }
 }
 
 protocol FeedCellPhotoAttachmentViewModel {
@@ -60,7 +61,7 @@ class NewsFeedCell: UITableViewCell{
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        imageView?.layer.cornerRadius = iconImageView.frame.width / 2
+        iconImageView?.layer.cornerRadius = iconImageView.frame.width / 2
         iconImageView.clipsToBounds = true
         cardView.layer.cornerRadius = 10
         cardView.clipsToBounds = true

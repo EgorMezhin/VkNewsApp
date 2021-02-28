@@ -9,28 +9,30 @@
 import UIKit
 
 enum NewsFeed {
-   
-  enum Model {
-    struct Request {
-      enum RequestType {
-        case getNewsFeed
-      }
+    
+    enum Model {
+        struct Request {
+            enum RequestType {
+                case getNewsFeed
+                case revealPostIds(postId: Int)
+            }
+        }
+        struct Response {
+            enum ResponseType {
+                case presentNewsFeed(feed: FeedResponse, revealPostIds: [Int])
+            }
+        }
+        struct ViewModel {
+            enum ViewModelData {
+                case displayNewsFeed(feedViewModel: FeedViewModel)
+            }
+        }
     }
-    struct Response {
-      enum ResponseType {
-        case presentNewsFeed(feed: FeedResponse)
-      }
-    }
-    struct ViewModel {
-      enum ViewModelData {
-        case displayNewsFeed(feedViewModel: FeedViewModel)
-      }
-    }
-  }
 }
 
 struct FeedViewModel {
     struct Cell: FeedCellViewModel {
+        var postId: Int
         var iconURLString: String
         var name: String
         var date: String
@@ -42,7 +44,6 @@ struct FeedViewModel {
         var photoAttachment: FeedCellPhotoAttachmentViewModel?
         var sizes: FeedCellSizes
     }
-    
     struct FeedCellPhotoAttachment: FeedCellPhotoAttachmentViewModel {
         var photoUrlString: String?
         var width: Int

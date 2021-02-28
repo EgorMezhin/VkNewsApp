@@ -9,11 +9,11 @@
 import UIKit
 
 protocol NewsFeedPresentationLogic {
-  func presentData(response: NewsFeed.Model.Response.ResponseType)
+    func presentData(response: NewsFeed.Model.Response.ResponseType)
 }
 
 class NewsFeedPresenter: NewsFeedPresentationLogic {
-  weak var viewController: NewsFeedDisplayLogic?
+    weak var viewController: NewsFeedDisplayLogic?
     var cellLayoutCalculator: NewsFeedCellLayoutCalculatorProtocol = NewsFeedCellLayoutCalculator()
     
     var dateFormatter: DateFormatter {
@@ -22,36 +22,27 @@ class NewsFeedPresenter: NewsFeedPresentationLogic {
         dateFormatter.dateFormat = "d MMM 'в' HH:mm"
         return dateFormatter
     }
-  
-  func presentData(response: NewsFeed.Model.Response.ResponseType) {
-  
-    switch response {
-    case .presentNewsFeed(feed: let feed):
-        let cells = feed.items.map { (feedItem) in
-            cellViewModel(from: feedItem, profiles: feed.profiles, groups: feed.groups)
+    
+    func presentData(response: NewsFeed.Model.Response.ResponseType) {
+        switch response {
+        case .presentNewsFeed(feed: let feed, let revealPostIds):
+            let cells = feed.items.map { (feedItem) in
+                cellViewModel(from: feedItem, profiles: feed.profiles, groups: feed.groups, revealPostIds: revealPostIds)
+            }
+            let feedViewModel = FeedViewModel.init(cells: cells)
+            viewController?.displayData(viewModel: NewsFeed.Model.ViewModel.ViewModelData.displayNewsFeed(feedViewModel: feedViewModel))
         }
-        
-        
-        let feedViewModel = FeedViewModel.init(cells: cells)
-        
-        viewController?.displayData(viewModel: NewsFeed.Model.ViewModel.ViewModelData.displayNewsFeed(feedViewModel: feedViewModel))
     }
-  }
-  
-    private func cellViewModel(from feedItem: FeedItem, profiles: [Profile], groups: [Group]) -> FeedViewModel.Cell {
-        
-        
+    
+    private func cellViewModel(from feedItem: FeedItem, profiles: [Profile], groups: [Group], revealPostIds: [Int]) -> FeedViewModel.Cell {
         let date = Date(timeIntervalSince1970: feedItem.date)
         let dateTitle = dateFormatter.string(from: date)
-        
         let profile = self.profile(for: feedItem.sourceId, profiles: profiles, groups: groups)
-        
         let photoAttachment = self.photoAttachment(feedItem: feedItem)
-        
-        let sizes = cellLayoutCalculator.sizes(postText: feedItem.text, photoAttachment: photoAttachment)
-        
-     //   print(feedItem.comments?.count)
+        let isFullSize = revealPostIds.contains(feedItem.postId)
+        let sizes = cellLayoutCalculator.sizes(postText: feedItem.text, photoAttachment: photoAttachment, isFullSizePost: isFullSize)
         return FeedViewModel.Cell.init(
+            postId: feedItem.postId,
             iconURLString: profile.photo,
             name: profile.name,
             date: dateTitle,
@@ -62,12 +53,9 @@ class NewsFeedPresenter: NewsFeedPresentationLogic {
             viewNumber: String(feedItem.views?.count ?? 0),
             photoAttachment: photoAttachment,
             sizes: sizes)
-        
     }
-
     
     private func profile(for sourceId: Int, profiles: [Profile], groups: [Group]) -> ProfileRepresentable {
-        
         let profilesAndGroups: [ProfileRepresentable] = sourceId >= 0 ? profiles : groups
         let normalSourceId = sourceId >= 0 ? sourceId : -sourceId
         let profileRepresentable = profilesAndGroups.first { (myProfileRepresentable) -> Bool in

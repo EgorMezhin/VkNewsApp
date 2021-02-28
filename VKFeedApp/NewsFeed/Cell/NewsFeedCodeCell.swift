@@ -8,9 +8,16 @@
 
 import UIKit
 
+protocol NewsFeedCodeCellDelegate: class {
+    func revealPost(for cell: NewsFeedCodeCell)
+}
+
+
 final class NewsFeedCodeCell: UITableViewCell {
     
     static let reuseId = "NewsFeedCodeCell"
+    
+    weak var delegate: NewsFeedCodeCellDelegate?
     
     let cardView: UIView = {
         let view = UIView()
@@ -34,6 +41,17 @@ final class NewsFeedCodeCell: UITableViewCell {
         label.textColor = #colorLiteral(red: 0.1961038411, green: 0.1960522234, blue: 0.2003527582, alpha: 1)
         return label
     }()
+    
+    let moreTextButton: UIButton = {
+        let button = UIButton()
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .medium)
+        button.setTitleColor(#colorLiteral(red: 0.4, green: 0.6235294118, blue: 0.831372549, alpha: 1), for: .normal)
+        button.contentHorizontalAlignment = .left
+        button.contentVerticalAlignment = .center
+        button.setTitle("Show more...", for: .normal)
+        return button
+    }()
+    
     
     let postImageView: WebImageView = {
         let imageView = WebImageView()
@@ -166,11 +184,21 @@ final class NewsFeedCodeCell: UITableViewCell {
        }()
     
     
+    override func prepareForReuse() {
+        iconImageView.set(imageUrl: nil)
+        postImageView.set(imageUrl: nil)
+    }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
+        iconImageView.layer.cornerRadius = Constants.topViewHeight / 2
+        iconImageView.clipsToBounds = true
+        
          cardView.layer.cornerRadius = 10
                cardView.clipsToBounds = true
+        
+        moreTextButton.addTarget(self, action: #selector(moreTextButtonTouched), for: .touchUpInside)
                
                backgroundColor = .clear
                selectionStyle = .none
@@ -180,6 +208,10 @@ final class NewsFeedCodeCell: UITableViewCell {
         overlayThirdLayerOnBottomView()
         overlayFourthLayerOnBottomViews()
 
+    }
+    
+    @objc private func moreTextButtonTouched() {
+        delegate?.revealPost(for: self)
     }
     
     
@@ -194,8 +226,10 @@ commentLabel.text = viewModel.commentNumber
 shareLabel.text = viewModel.shareNumber
 viewLabel.text = viewModel.viewNumber
         postLabel.frame = viewModel.sizes.postLabelFrame
+        moreTextButton.frame = viewModel.sizes.moreTextButtonFrame  
         postImageView.frame = viewModel.sizes.attachmentFrame
         bottomView.frame = viewModel.sizes.bottomViewFrame
+        
         
         
         if let photoAttachment = viewModel.photoAttachment {
@@ -215,6 +249,7 @@ viewLabel.text = viewModel.viewNumber
     private func overlaySecondLayer() {
         cardView.addSubview(topView)
         cardView.addSubview(postLabel)
+        cardView.addSubview(moreTextButton)
         cardView.addSubview(postImageView)
         cardView.addSubview(bottomView)
 
