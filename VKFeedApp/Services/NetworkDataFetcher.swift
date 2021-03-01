@@ -14,9 +14,8 @@ protocol DataFetcher {
 }
 
 struct NetworkDataFetcher: DataFetcher {
-
-    private let authService: AuthService
     
+    private let authService: AuthService
     let networking: Networking
     
     init(networking: Networking, authService: AuthService = SceneDelegate.shared().authService) {
@@ -28,10 +27,10 @@ struct NetworkDataFetcher: DataFetcher {
         guard let userId = authService.userId else { return }
         let params = ["user_ids": userId, "fields": "photo_100"]
         networking.request(path: API.user, parameters: params) { (data, error) in
-                     if let error = error {
-                   print("Error recieved requesting data: \(error.localizedDescription)")
-                   response(nil)
-               }
+            if let error = error {
+                print("Error recieved requesting data: \(error.localizedDescription)")
+                response(nil)
+            }
             let decoded = self.decodeJSON(type: UserResponseWrapped.self, from: data)
             response(decoded?.response.first)
         }
@@ -44,7 +43,6 @@ struct NetworkDataFetcher: DataFetcher {
                 print("Error recieved requesting data: \(error.localizedDescription)")
                 response(nil)
             }
-            
             let decoded = self.decodeJSON(type: FeedResponseWrapped.self, from: data)
             response(decoded?.response)
         }
@@ -56,6 +54,4 @@ struct NetworkDataFetcher: DataFetcher {
         guard let data = from, let response = try? decoder.decode(type.self, from: data) else { return nil }
         return response
     }
-    
-    
 }

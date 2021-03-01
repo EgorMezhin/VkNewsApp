@@ -16,7 +16,7 @@ protocol AuthServiceDelegate: class {
 }
 
 class AuthService: NSObject, VKSdkDelegate, VKSdkUIDelegate {
-
+    
     private let id = "7771459"
     private let vkSdk: VKSdk
     
@@ -33,7 +33,6 @@ class AuthService: NSObject, VKSdkDelegate, VKSdkUIDelegate {
     var token: String? {
         return VKSdk.accessToken()?.accessToken
     }
-    
     var userId: String? {
         return VKSdk.accessToken()?.userId
     }
@@ -57,8 +56,7 @@ class AuthService: NSObject, VKSdkDelegate, VKSdkUIDelegate {
     func vkSdkAccessAuthorizationFinished(with result: VKAuthorizationResult!) {
         print(#function)
         if result.token != nil {
-            
-        delegate?.authServiceLogIn()
+            delegate?.authServiceLogIn()
         }
     }
     
@@ -75,5 +73,4 @@ class AuthService: NSObject, VKSdkDelegate, VKSdkUIDelegate {
     func vkSdkNeedCaptchaEnter(_ captchaError: VKError!) {
         print(#function)
     }
-    
 }

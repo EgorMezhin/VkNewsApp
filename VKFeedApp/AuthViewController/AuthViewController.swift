@@ -11,18 +11,23 @@ import UIKit
 class AuthViewController: UIViewController {
     
     private var authService: AuthService!
-
+    
+    @IBOutlet weak var logInButton: UIButton!{
+        didSet {
+            logInButton.clipsToBounds = true
+            logInButton.layer.cornerRadius = 10
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         authService = SceneDelegate.shared().authService
-        view.backgroundColor = .red
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .white
     }
-
+    
     @IBAction func logInTouch(_ sender: UIButton) {
         authService.wakeUpSession()
     }
-    
 }
 

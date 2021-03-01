@@ -39,15 +39,12 @@ struct Photo: Decodable {
     var height: Int {
         return getSize().height
     }
-    
     var width: Int {
         return getSize().width
     }
-    
     var url: String {
         return getSize().url
     }
-    
     private func getSize() -> PhotoSize {
         if let sizeX = sizes.first(where: { $0.type == "x"}) {
             return sizeX
@@ -77,7 +74,6 @@ protocol ProfileRepresentable {
 }
 
 struct Profile: Decodable, ProfileRepresentable {
-
     let id: Int
     let firstName: String
     let lastName: String
@@ -91,5 +87,4 @@ struct Group: Decodable, ProfileRepresentable {
     let name: String
     let photo100: String
     var photo: String { return photo100 }
-    
 }

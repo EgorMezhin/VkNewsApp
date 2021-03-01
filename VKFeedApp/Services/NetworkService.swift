@@ -10,11 +10,10 @@ import Foundation
 
 protocol Networking {
     func request(path: String, parameters: [String: String], completion: @escaping (Data?, Error?) -> Void)
-    
 }
 
 final class NetworkService: Networking {
-   
+    
     private let authService: AuthService
     
     init(authService: AuthService = SceneDelegate.shared().authService) {
@@ -22,18 +21,15 @@ final class NetworkService: Networking {
     }
     
     func request(path: String, parameters: [String : String], completion: @escaping (Data?, Error?) -> Void) {
-           guard let token = authService.token else { return }
-            
-             var allParameters = parameters
-             allParameters["access_token"] = token
-             allParameters["v"] = API.version
-             let url = self.url(from: path, parameters: allParameters)
+        guard let token = authService.token else { return }
+        var allParameters = parameters
+        allParameters["access_token"] = token
+        allParameters["v"] = API.version
+        let url = self.url(from: path, parameters: allParameters)
         let request = URLRequest.init(url: url)
         let task = createDataTask(from: request, completion: completion)
         task.resume()
-             
-             print(url)
-       }
+    }
     
     private func createDataTask(from request: URLRequest, completion: @escaping (Data?, Error?) -> Void) -> URLSessionDataTask {
         return URLSession.shared.dataTask(with: request) { (data, response, error) in
@@ -49,7 +45,6 @@ final class NetworkService: Networking {
         components.host = API.host
         components.path = path
         components.queryItems = parameters.map { URLQueryItem.init(name: $0, value: $1)}
-        
         return components.url!
     }
 }
