@@ -43,6 +43,7 @@
 		D0BC672125ED29AE002D2421 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC672025ED29AD002D2421 /* Constraints.swift */; };
 		D0BC672425ED9BFB002D2421 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC672325ED9BFB002D2421 /* FooterView.swift */; };
 		D0BC672625EDA129002D2421 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = D0BC672525EDA129002D2421 /* Localizable.stringsdict */; };
+		D0BC672825EDA6D7002D2421 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC672725EDA6D7002D2421 /* GradientView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -97,6 +98,7 @@
 		D0BC672025ED29AD002D2421 /* Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constraints.swift; path = "../../../../../../../Volumes/Lass_USB/swiftbook/Нужно/22. VK News Feed App/30. Loading Previous Posts/29 урок/VKNewsFeed/Helpers/Constraints.swift"; sourceTree = "<group>"; };
 		D0BC672325ED9BFB002D2421 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 		D0BC672525EDA129002D2421 /* Localizable.stringsdict */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; path = Localizable.stringsdict; sourceTree = "<group>"; };
+		D0BC672725EDA6D7002D2421 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +235,7 @@
 		D0BC671925ED290F002D2421 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D0BC672725EDA6D7002D2421 /* GradientView.swift */,
 				D0BC672025ED29AD002D2421 /* Constraints.swift */,
 				D0BC670125EACC35002D2421 /* StringPlusHeight.swift */,
 				D0BC66FD25E9B1C3002D2421 /* WebImageView.swift */,
@@ -373,6 +376,7 @@
 				D0BC66FA25E830E1002D2421 /* NewsFeedCell.swift in Sources */,
 				D0BC670D25EBEE2C002D2421 /* GalleryCollectionView.swift in Sources */,
 				D0BC66F325E811DF002D2421 /* NewsFeedViewController.swift in Sources */,
+				D0BC672825EDA6D7002D2421 /* GradientView.swift in Sources */,
 				D0BC670025EAB744002D2421 /* NewsFeedCellLayoutCalculator.swift in Sources */,
 				D0BC671625EC47A8002D2421 /* InsetableTextField.swift in Sources */,
 			);
