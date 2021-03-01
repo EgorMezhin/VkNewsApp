@@ -13,7 +13,6 @@ class InsetableTextField: UITextField {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-       // heightAnchor.constraint(equalToConstant: 35).isActive = true
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1)
         placeholder = "Search"

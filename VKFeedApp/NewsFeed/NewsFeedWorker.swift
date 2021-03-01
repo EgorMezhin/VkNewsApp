@@ -9,7 +9,7 @@
 import UIKit
 
 class NewsFeedService {
-
+    
     var authService: AuthService
     var networking: Networking
     var fetcher: DataFetcher
@@ -17,7 +17,7 @@ class NewsFeedService {
     private var revealPostIds = [Int]()
     private var feedResponse: FeedResponse?
     private var newFromInProcess: String?
-
+    
     init() {
         self.authService = SceneDelegate.shared().authService
         self.networking = NetworkService(authService: authService)
@@ -56,7 +56,7 @@ class NewsFeedService {
                     let oldProfilesFiltered = oldProfiles.filter({ (oldProfile) -> Bool in
                         !feed.profiles.contains(where: {$0.id == oldProfile.id })
                     })
-                      profiles.append(contentsOf: oldProfilesFiltered)
+                    profiles.append(contentsOf: oldProfilesFiltered)
                 }
                 self?.feedResponse?.profiles = profiles
                 var groups = feed.groups
@@ -64,7 +64,7 @@ class NewsFeedService {
                     let oldGroupFiltered = oldGroups.filter({ (oldGroup) -> Bool in
                         !feed.groups.contains(where: {$0.id == oldGroup.id })
                     })
-                      groups.append(contentsOf: oldGroupFiltered)
+                    groups.append(contentsOf: oldGroupFiltered)
                 }
                 self?.feedResponse?.groups = groups
                 self?.feedResponse?.nextFrom = feed.nextFrom

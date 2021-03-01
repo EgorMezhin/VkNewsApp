@@ -15,7 +15,6 @@ protocol NewsFeedPresentationLogic {
 class NewsFeedPresenter: NewsFeedPresentationLogic {
     weak var viewController: NewsFeedDisplayLogic?
     var cellLayoutCalculator: NewsFeedCellLayoutCalculatorProtocol = NewsFeedCellLayoutCalculator()
-    
     var dateFormatter: DateFormatter {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "ru_RU")
@@ -48,8 +47,7 @@ class NewsFeedPresenter: NewsFeedPresentationLogic {
         let photoAttachments = self.photoAttachments(feedItem: feedItem)
         let isFullSize = revealPostIds.contains(feedItem.postId)
         let sizes = cellLayoutCalculator.sizes(postText: feedItem.text, photoAttachments: photoAttachments, isFullSizePost: isFullSize)
-        
-          let postText = feedItem.text?.replacingOccurrences(of: "<br>", with: "\n")
+        let postText = feedItem.text?.replacingOccurrences(of: "<br>", with: "\n")
         return FeedViewModel.Cell.init(
             postId: feedItem.postId,
             iconURLString: profile.photo,

@@ -42,13 +42,8 @@ class RowLayout: UICollectionViewLayout {
         
         for item in 0 ..< collectionView.numberOfItems(inSection: 0) {
             let indexPath = IndexPath(item: item, section: 0)
-            print(item)
           let photoSize = delegate.collectionView(collectionView, photoAtIndexPath: indexPath)
             photos.append(photoSize)
-    //        let photoSize = delegate.collectionView(collectionView, photoAtIndexPath: indexPath)
-            print(" photo size = \(photoSize)")
-//photos.append(photoSize)
-          //  print(" photo size = \(photoSize)")
         }
         
         let superViewWidth = collectionView.frame.width

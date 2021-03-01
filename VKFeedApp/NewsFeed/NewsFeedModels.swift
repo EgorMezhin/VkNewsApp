@@ -9,7 +9,6 @@
 import UIKit
 
 enum NewsFeed {
-    
     enum Model {
         struct Request {
             enum RequestType {
@@ -62,5 +61,5 @@ struct FeedViewModel {
 
 struct UserViewModel: TitleViewViewModel {
     var photoUrlString: String?
-
+    
 }

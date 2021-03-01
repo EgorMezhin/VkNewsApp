@@ -27,7 +27,6 @@ class TitleView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-//        heightAnchor.constraint(equalToConstant: 50).isActive = true
         translatesAutoresizingMaskIntoConstraints = false
         addSubview(myTextField)
         addSubview(myAvatarView)
@@ -48,7 +47,7 @@ class TitleView: UIView {
         myTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 4).isActive = true
         myTextField.trailingAnchor.constraint(equalTo: myAvatarView.leadingAnchor, constant: -10).isActive = true
         myTextField.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -4).isActive = true
-    
+        
     }
     
     override var intrinsicContentSize: CGSize {
@@ -65,6 +64,4 @@ class TitleView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
 }

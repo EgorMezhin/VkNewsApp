@@ -23,7 +23,6 @@ class AuthService: NSObject, VKSdkDelegate, VKSdkUIDelegate {
     override init() {
         vkSdk = VKSdk.initialize(withAppId: id)
         super.init()
-        print("VKSdk.initialize")
         vkSdk.register(self)
         vkSdk.uiDelegate = self
     }
@@ -54,23 +53,19 @@ class AuthService: NSObject, VKSdkDelegate, VKSdkUIDelegate {
     }
     
     func vkSdkAccessAuthorizationFinished(with result: VKAuthorizationResult!) {
-        print(#function)
         if result.token != nil {
             delegate?.authServiceLogIn()
         }
     }
     
     func vkSdkUserAuthorizationFailed() {
-        print(#function)
         delegate?.authServiceLogInDidFail()
     }
     
     func vkSdkShouldPresent(_ controller: UIViewController!) {
-        print(#function)
         delegate?.authServiceShouldShow(viewController: controller)
     }
     
     func vkSdkNeedCaptchaEnter(_ captchaError: VKError!) {
-        print(#function)
     }
 }

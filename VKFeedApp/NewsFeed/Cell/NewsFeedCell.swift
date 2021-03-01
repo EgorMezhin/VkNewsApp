@@ -19,7 +19,6 @@ protocol FeedCellViewModel {
     var viewNumber: String? { get }
     var photoAttachments: [FeedCellPhotoAttachmentViewModel] { get }
     var sizes: FeedCellSizes { get }
-
 }
 
 protocol FeedCellSizes {
@@ -35,7 +34,6 @@ protocol FeedCellPhotoAttachmentViewModel {
     var width: Int { get }
     var height: Int { get }
 }
-
 
 class NewsFeedCell: UITableViewCell{
     
@@ -65,31 +63,8 @@ class NewsFeedCell: UITableViewCell{
         iconImageView.clipsToBounds = true
         cardView.layer.cornerRadius = 10
         cardView.clipsToBounds = true
-        
         backgroundColor = .clear
         selectionStyle = .none
     }
-    
-//    func set(viewModel: FeedCellViewModel) {
-//        iconImageView.set(imageUrl: viewModel.iconURLString)
-//        nameLabel.text = viewModel.name
-//        dateLabel.text = viewModel.date
-//        postLabel.text = viewModel.text
-//        likeLabel.text = viewModel.likeNumber
-//        commentLabel.text = viewModel.commentNumber
-//        shareLabel.text = viewModel.shareNumber
-//        viewLabel.text = viewModel.viewNumber
-//        
-//        postLabel.frame = viewModel.sizes.postLabelFrame
-//        postImageView.frame = viewModel.sizes.attachmentFrame
-//        bottomView.frame = viewModel.sizes.bottomViewFrame
-//        
-//        
-//        if let photoAttachment = viewModel.photoAttachments {
-//            postImageView.set(imageUrl: photoAttachment.photoUrlString)
-//            postImageView.isHidden = false
-//        } else {
-//            postImageView.isHidden = true
-//        }
-//    }
+
 }

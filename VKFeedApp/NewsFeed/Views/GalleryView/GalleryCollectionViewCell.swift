@@ -21,9 +21,8 @@ class GalleryCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-    
-        addSubview(myImageView)
         
+        addSubview(myImageView)
         myImageView.fillSuperview()
     }
     

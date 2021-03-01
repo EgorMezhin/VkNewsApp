@@ -19,7 +19,7 @@ class FooterView: UIView {
         return label
     }()
     private let loader: UIActivityIndicatorView = {
-       let loader = UIActivityIndicatorView()
+        let loader = UIActivityIndicatorView()
         loader.hidesWhenStopped = true
         loader.translatesAutoresizingMaskIntoConstraints = false
         return loader

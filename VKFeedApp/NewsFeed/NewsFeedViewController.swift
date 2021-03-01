@@ -17,17 +17,15 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic, NewsFeedCo
     var interactor: NewsFeedBusinessLogic?
     var router: (NSObjectProtocol & NewsFeedRoutingLogic)?
     private var feedViewModel = FeedViewModel.init(cells: [], footerTitle: nil)
-    
-    @IBOutlet weak var table: UITableView!
-    
     private var titleView = TitleView()
     private lazy var footerView = FooterView()
-    
     private var refreshControlIndicator: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         return refreshControl
     }()
+    
+    @IBOutlet weak var table: UITableView!
     
     // MARK: Setup
     
@@ -43,8 +41,6 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic, NewsFeedCo
         router.viewController     = viewController
     }
     
-    // MARK: Routing
-    
     // MARK: View lifecycle
     
     override func viewDidLoad() {
@@ -56,13 +52,11 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic, NewsFeedCo
         interactor?.makeRequest(request: NewsFeed.Model.Request.RequestType.getUserAvatar)
     }
     
-    
     private func setupTable() {
-        
         let topInset: CGFloat = 8
         table.contentInset.top = topInset
-             table.register(UINib(nibName: "NewsFeedCell", bundle: nil), forCellReuseIdentifier: NewsFeedCell.reuseIdentifier)
-             table.register(NewsFeedCodeCell.self, forCellReuseIdentifier: NewsFeedCodeCell.reuseId)
+        table.register(UINib(nibName: "NewsFeedCell", bundle: nil), forCellReuseIdentifier: NewsFeedCell.reuseIdentifier)
+        table.register(NewsFeedCodeCell.self, forCellReuseIdentifier: NewsFeedCodeCell.reuseId)
         table.separatorStyle = .none
         table.backgroundColor = .clear
         
@@ -85,8 +79,8 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic, NewsFeedCo
     
     @objc private func refresh() {
         interactor?.makeRequest(request: NewsFeed.Model.Request.RequestType.getNewsFeed)
-        
     }
+    
     func displayData(viewModel: NewsFeed.Model.ViewModel.ViewModelData) {
         switch viewModel {
         case .displayNewsFeed(feedViewModel: let feedViewModel):
@@ -102,15 +96,14 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic, NewsFeedCo
     }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-         if scrollView.contentOffset.y > scrollView.contentSize.height / 1.1 {
-                   interactor?.makeRequest(request: NewsFeed.Model.Request.RequestType.getNextBatch)
-               }
+        if scrollView.contentOffset.y > scrollView.contentSize.height / 1.1 {
+            interactor?.makeRequest(request: NewsFeed.Model.Request.RequestType.getNextBatch)
+        }
     }
     
     func revealPost(for cell: NewsFeedCodeCell) {
         guard let indexPath = table.indexPath(for: cell) else { return }
         let cellViewModel = feedViewModel.cells[indexPath.row]
-        
         interactor?.makeRequest(request: NewsFeed.Model.Request.RequestType.revealPostIds(postId: cellViewModel.postId))
     }
 }
