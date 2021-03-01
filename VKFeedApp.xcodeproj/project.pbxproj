@@ -41,6 +41,8 @@
 		D0BC671625EC47A8002D2421 /* InsetableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC671525EC47A8002D2421 /* InsetableTextField.swift */; };
 		D0BC671825EC50F3002D2421 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC671725EC50F3002D2421 /* UserResponse.swift */; };
 		D0BC672125ED29AE002D2421 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC672025ED29AD002D2421 /* Constraints.swift */; };
+		D0BC672425ED9BFB002D2421 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC672325ED9BFB002D2421 /* FooterView.swift */; };
+		D0BC672625EDA129002D2421 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = D0BC672525EDA129002D2421 /* Localizable.stringsdict */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -93,6 +95,8 @@
 		D0BC671525EC47A8002D2421 /* InsetableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetableTextField.swift; sourceTree = "<group>"; };
 		D0BC671725EC50F3002D2421 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		D0BC672025ED29AD002D2421 /* Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constraints.swift; path = "../../../../../../../Volumes/Lass_USB/swiftbook/Нужно/22. VK News Feed App/30. Loading Previous Posts/29 урок/VKNewsFeed/Helpers/Constraints.swift"; sourceTree = "<group>"; };
+		D0BC672325ED9BFB002D2421 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
+		D0BC672525EDA129002D2421 /* Localizable.stringsdict */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; path = Localizable.stringsdict; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +138,7 @@
 				D0BC66E725E81179002D2421 /* NewsFeed */,
 				D0BC671925ED290F002D2421 /* Supporting Files */,
 				D0BC66C625E6A3C5002D2421 /* Info.plist */,
+				D0BC672525EDA129002D2421 /* Localizable.stringsdict */,
 			);
 			path = VKFeedApp;
 			sourceTree = "<group>";
@@ -179,6 +184,7 @@
 		D0BC66E725E81179002D2421 /* NewsFeed */ = {
 			isa = PBXGroup;
 			children = (
+				D0BC672225ED9BE4002D2421 /* FooterView */,
 				D0BC671225EC46FF002D2421 /* TitleView */,
 				D0BC670B25EBEE15002D2421 /* GalleryView */,
 				D0BC66F825E830D0002D2421 /* Cell */,
@@ -234,6 +240,14 @@
 				D0BC66C325E6A3C5002D2421 /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D0BC672225ED9BE4002D2421 /* FooterView */ = {
+			isa = PBXGroup;
+			children = (
+				D0BC672325ED9BFB002D2421 /* FooterView.swift */,
+			);
+			path = FooterView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,6 +315,7 @@
 				D0BC66FC25E83127002D2421 /* NewsFeedCell.xib in Resources */,
 				D0BC66D625E6CC46002D2421 /* AuthViewController.storyboard in Resources */,
 				D0BC66C225E6A3C5002D2421 /* Assets.xcassets in Resources */,
+				D0BC672625EDA129002D2421 /* Localizable.stringsdict in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0BC671125EBFA35002D2421 /* RowLayout.swift in Sources */,
+				D0BC672425ED9BFB002D2421 /* FooterView.swift in Sources */,
 				D0BC66E425E7211E002D2421 /* FeedResponse.swift in Sources */,
 				D0BC66EF25E811DF002D2421 /* NewsFeedPresenter.swift in Sources */,
 				D0BC670425EAE4A4002D2421 /* NewsFeedCodeCell.swift in Sources */,
