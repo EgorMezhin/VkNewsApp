@@ -11,6 +11,7 @@ import UIKit
 class GalleryCollectionViewCell: UICollectionViewCell {
     
     static let reuseId = "GalleryCollectionViewCell"
+    
     let myImageView: WebImageView = {
         let imageView = WebImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -21,7 +22,6 @@ class GalleryCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         addSubview(myImageView)
         myImageView.fillSuperview()
     }
@@ -36,7 +36,6 @@ class GalleryCollectionViewCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
         myImageView.layer.masksToBounds = true
         myImageView.layer.cornerRadius = 10
         self.layer.shadowRadius = 3

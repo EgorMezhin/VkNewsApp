@@ -15,14 +15,12 @@ class GalleryCollectionView: UICollectionView, UICollectionViewDelegate, UIColle
     init() {
         let rowLayout = RowLayout()
         super.init(frame: .zero, collectionViewLayout: rowLayout)
-        
         delegate = self
         dataSource = self
         backgroundColor = .white
         showsHorizontalScrollIndicator = false
         showsVerticalScrollIndicator = false
         register(GalleryCollectionViewCell.self, forCellWithReuseIdentifier: GalleryCollectionViewCell.reuseId)
-        
         if let rowLayout = collectionViewLayout as? RowLayout {
             rowLayout.delegate = self
         }
@@ -51,7 +49,6 @@ class GalleryCollectionView: UICollectionView, UICollectionViewDelegate, UIColle
 }
 
 extension GalleryCollectionView: RowLayoutDelegate {
-    
     func collectionView(_ collectionView: UICollectionView, photoAtIndexPath indexPath: IndexPath) -> CGSize {
         let width = photos[indexPath.row].width
         let height = photos[indexPath.row].height

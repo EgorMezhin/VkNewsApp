@@ -8,33 +8,9 @@
 
 import UIKit
 
-protocol FeedCellViewModel {
-    var iconURLString: String { get }
-    var name: String { get }
-    var date: String { get }
-    var text: String? { get }
-    var likeNumber: String? { get }
-    var commentNumber: String? { get }
-    var shareNumber: String? { get }
-    var viewNumber: String? { get }
-    var photoAttachments: [FeedCellPhotoAttachmentViewModel] { get }
-    var sizes: FeedCellSizes { get }
-}
 
-protocol FeedCellSizes {
-    var postLabelFrame: CGRect { get }
-    var attachmentFrame: CGRect { get }
-    var bottomViewFrame: CGRect { get }
-    var totalHeight: CGFloat { get }
-    var moreTextButtonFrame: CGRect { get }
-}
-
-protocol FeedCellPhotoAttachmentViewModel {
-    var photoUrlString: String? { get }
-    var width: Int { get }
-    var height: Int { get }
-}
-
+ 
+/*
 class NewsFeedCell: UITableViewCell{
     
     static let reuseIdentifier = "NewsFeedCell"
@@ -58,7 +34,6 @@ class NewsFeedCell: UITableViewCell{
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         iconImageView?.layer.cornerRadius = iconImageView.frame.width / 2
         iconImageView.clipsToBounds = true
         cardView.layer.cornerRadius = 10
@@ -66,5 +41,6 @@ class NewsFeedCell: UITableViewCell{
         backgroundColor = .clear
         selectionStyle = .none
     }
-
 }
+ */
+

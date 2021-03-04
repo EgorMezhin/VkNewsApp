@@ -18,6 +18,7 @@ class FooterView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    
     private let loader: UIActivityIndicatorView = {
         let loader = UIActivityIndicatorView()
         loader.hidesWhenStopped = true
@@ -27,7 +28,6 @@ class FooterView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         addSubview(label)
         addSubview(loader)
         
@@ -42,6 +42,7 @@ class FooterView: UIView {
     func showLoader() {
         loader.startAnimating()
     }
+    
     func setTitle(_ title: String?) {
         loader.stopAnimating()
         label.text = title

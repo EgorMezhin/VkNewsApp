@@ -29,4 +29,3 @@ class AuthViewController: UIViewController {
         authService.wakeUpSession()
     }
 }
-

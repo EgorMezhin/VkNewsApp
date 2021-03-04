@@ -16,6 +16,7 @@ protocol DataFetcher {
 struct NetworkDataFetcher: DataFetcher {
 
     private let authService: AuthService
+    
     let networking: Networking
     
     init(networking: Networking, authService: AuthService = SceneDelegate.shared().authService) {

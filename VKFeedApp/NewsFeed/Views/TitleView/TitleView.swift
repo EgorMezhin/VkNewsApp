@@ -26,7 +26,6 @@ class TitleView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         translatesAutoresizingMaskIntoConstraints = false
         addSubview(myTextField)
         addSubview(myAvatarView)
@@ -56,7 +55,6 @@ class TitleView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
         myAvatarView.layer.masksToBounds = true
         myAvatarView.layer.cornerRadius = myAvatarView.frame.width / 2
     }
