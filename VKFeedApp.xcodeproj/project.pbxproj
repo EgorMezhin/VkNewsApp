@@ -40,10 +40,11 @@
 		D0BC671425EC471F002D2421 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC671325EC471E002D2421 /* TitleView.swift */; };
 		D0BC671625EC47A8002D2421 /* InsetableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC671525EC47A8002D2421 /* InsetableTextField.swift */; };
 		D0BC671825EC50F3002D2421 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC671725EC50F3002D2421 /* UserResponse.swift */; };
-		D0BC672125ED29AE002D2421 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC672025ED29AD002D2421 /* Constraints.swift */; };
 		D0BC672425ED9BFB002D2421 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC672325ED9BFB002D2421 /* FooterView.swift */; };
 		D0BC672625EDA129002D2421 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = D0BC672525EDA129002D2421 /* Localizable.stringsdict */; };
 		D0BC672825EDA6D7002D2421 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC672725EDA6D7002D2421 /* GradientView.swift */; };
+		D0ECA96825F1395E00D1D7EC /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ECA96725F1395E00D1D7EC /* Profile.swift */; };
+		D0ECA96A25F139C200D1D7EC /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ECA96925F139C200D1D7EC /* Constraints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -95,10 +96,11 @@
 		D0BC671325EC471E002D2421 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		D0BC671525EC47A8002D2421 /* InsetableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetableTextField.swift; sourceTree = "<group>"; };
 		D0BC671725EC50F3002D2421 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
-		D0BC672025ED29AD002D2421 /* Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constraints.swift; path = "../../../../../../../Volumes/Lass_USB/swiftbook/Нужно/22. VK News Feed App/30. Loading Previous Posts/29 урок/VKNewsFeed/Helpers/Constraints.swift"; sourceTree = "<group>"; };
 		D0BC672325ED9BFB002D2421 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 		D0BC672525EDA129002D2421 /* Localizable.stringsdict */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; path = Localizable.stringsdict; sourceTree = "<group>"; };
 		D0BC672725EDA6D7002D2421 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		D0ECA96725F1395E00D1D7EC /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		D0ECA96925F139C200D1D7EC /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				D0BC66E325E7211E002D2421 /* FeedResponse.swift */,
+				D0ECA96725F1395E00D1D7EC /* Profile.swift */,
 				D0BC671725EC50F3002D2421 /* UserResponse.swift */,
 			);
 			path = Models;
@@ -233,10 +236,10 @@
 		D0BC671925ED290F002D2421 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D0BC672025ED29AD002D2421 /* Constraints.swift */,
 				D0BC670125EACC35002D2421 /* StringPlusHeight.swift */,
 				D0BC66C125E6A3C5002D2421 /* Assets.xcassets */,
 				D0BC66C325E6A3C5002D2421 /* LaunchScreen.storyboard */,
+				D0ECA96925F139C200D1D7EC /* Constraints.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -359,11 +362,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0BC671125EBFA35002D2421 /* RowLayout.swift in Sources */,
+				D0ECA96825F1395E00D1D7EC /* Profile.swift in Sources */,
 				D0BC672425ED9BFB002D2421 /* FooterView.swift in Sources */,
 				D0BC66E425E7211E002D2421 /* FeedResponse.swift in Sources */,
 				D0BC66EF25E811DF002D2421 /* NewsFeedPresenter.swift in Sources */,
 				D0BC670425EAE4A4002D2421 /* NewsFeedCodeCell.swift in Sources */,
-				D0BC672125ED29AE002D2421 /* Constraints.swift in Sources */,
 				D0BC66DD25E6D8FF002D2421 /* SceneDelegate.swift in Sources */,
 				D0BC670F25EBEEDF002D2421 /* GalleryCollectionViewCell.swift in Sources */,
 				D0BC66BD25E6A3C0002D2421 /* AuthViewController.swift in Sources */,
@@ -380,6 +383,7 @@
 				D0BC66D325E6CA87002D2421 /* AuthService.swift in Sources */,
 				D0BC66E125E6EB3A002D2421 /* API.swift in Sources */,
 				D0BC670225EACC35002D2421 /* StringPlusHeight.swift in Sources */,
+				D0ECA96A25F139C200D1D7EC /* Constraints.swift in Sources */,
 				D0BC66F225E811DF002D2421 /* NewsFeedModels.swift in Sources */,
 				D0BC66FA25E830E1002D2421 /* NewsFeedCell.swift in Sources */,
 				D0BC670D25EBEE2C002D2421 /* GalleryCollectionView.swift in Sources */,

@@ -32,6 +32,7 @@ class AuthService: NSObject, VKSdkDelegate, VKSdkUIDelegate {
     var token: String? {
         return VKSdk.accessToken()?.accessToken
     }
+    
     var userId: String? {
         return VKSdk.accessToken()?.userId
     }
@@ -41,10 +42,8 @@ class AuthService: NSObject, VKSdkDelegate, VKSdkUIDelegate {
         VKSdk.wakeUpSession(scope) { [delegate] (state, error) in
             switch state {
             case .initialized:
-                print("initialized")
                 VKSdk.authorize(scope)
             case .authorized:
-                print("authorized")
                 delegate?.authServiceLogIn()
             default:
                 delegate?.authServiceLogInDidFail()

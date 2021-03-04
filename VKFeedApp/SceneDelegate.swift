@@ -36,7 +36,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, AuthServiceDelegate {
             VKSdk.processOpen(url, fromApplication: UIApplication.OpenURLOptionsKey.sourceApplication.rawValue)
         }
     }
-    
+
     //MARK: - AuthServiceDelegate
     func authServiceShouldShow(viewController: UIViewController) {
         window?.rootViewController?.present(viewController, animated: true) 

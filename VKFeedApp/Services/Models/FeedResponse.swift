@@ -31,6 +31,10 @@ struct FeedItem: Decodable {
     let attachments: [Attachment]?
 }
 
+struct CountableItem: Decodable {
+    let count: Int
+}
+
 struct Attachment: Decodable {
     let photo: Photo?
 }
@@ -47,12 +51,13 @@ struct Photo: Decodable {
         return getSize().url
     }
     private func getSize() -> PhotoSize {
+        let errorMessage = "wrong image"
         if let sizeX = sizes.first(where: { $0.type == "x"}) {
             return sizeX
         } else if let fallBackSize = sizes.last {
             return fallBackSize
         } else {
-            return PhotoSize(type: "wrong image", url: "wrong image", width: 0, height: 0)
+            return PhotoSize(type: errorMessage, url: errorMessage, width: 0, height: 0)
         }
     }
 }
@@ -62,30 +67,4 @@ struct PhotoSize: Decodable {
     let url: String
     let width: Int
     let height: Int
-}
-
-struct CountableItem: Decodable {
-    let count: Int
-}
-
-protocol ProfileRepresentable {
-    var id: Int { get }
-    var name: String { get }
-    var photo: String { get }
-}
-
-struct Profile: Decodable, ProfileRepresentable {
-    let id: Int
-    let firstName: String
-    let lastName: String
-    var name: String { return firstName + " " + lastName }
-    let photo100: String
-    var photo: String { return photo100 }
-}
-
-struct Group: Decodable, ProfileRepresentable {
-    let id: Int
-    let name: String
-    let photo100: String
-    var photo: String { return photo100 }
 }
