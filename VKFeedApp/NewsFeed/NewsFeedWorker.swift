@@ -71,7 +71,7 @@ class NewsFeedService {
                 self?.feedResponse?.groups = groups
                 self?.feedResponse?.nextFrom = feed.nextFrom
             }
-            guard let feedResponse = self?.feedResponse else { return }
+            guard (self?.feedResponse) != nil else { return }
             completion(self!.revealPostIds, feed)
         }
     }
