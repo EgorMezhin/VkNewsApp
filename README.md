@@ -4,6 +4,7 @@
 -----------------------------------
 - iPhone 11
 - iOS 13.7
+- Carthage
 - portrait orientation
 
 **Description:**
