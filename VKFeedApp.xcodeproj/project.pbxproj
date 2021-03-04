@@ -27,8 +27,6 @@
 		D0BC66F325E811DF002D2421 /* NewsFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC66EC25E811DF002D2421 /* NewsFeedViewController.swift */; };
 		D0BC66F425E811DF002D2421 /* NewsFeedInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC66ED25E811DF002D2421 /* NewsFeedInteractor.swift */; };
 		D0BC66F725E816E6002D2421 /* NewsFeedViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0BC66F625E816E6002D2421 /* NewsFeedViewController.storyboard */; };
-		D0BC66FA25E830E1002D2421 /* NewsFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC66F925E830E1002D2421 /* NewsFeedCell.swift */; };
-		D0BC66FC25E83127002D2421 /* NewsFeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0BC66FB25E83127002D2421 /* NewsFeedCell.xib */; };
 		D0BC66FE25E9B1C3002D2421 /* WebImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC66FD25E9B1C3002D2421 /* WebImageView.swift */; };
 		D0BC670025EAB744002D2421 /* NewsFeedCellLayoutCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC66FF25EAB744002D2421 /* NewsFeedCellLayoutCalculator.swift */; };
 		D0BC670225EACC35002D2421 /* StringPlusHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC670125EACC35002D2421 /* StringPlusHeight.swift */; };
@@ -83,8 +81,6 @@
 		D0BC66EC25E811DF002D2421 /* NewsFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedViewController.swift; sourceTree = "<group>"; };
 		D0BC66ED25E811DF002D2421 /* NewsFeedInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedInteractor.swift; sourceTree = "<group>"; };
 		D0BC66F625E816E6002D2421 /* NewsFeedViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewsFeedViewController.storyboard; sourceTree = "<group>"; };
-		D0BC66F925E830E1002D2421 /* NewsFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedCell.swift; sourceTree = "<group>"; };
-		D0BC66FB25E83127002D2421 /* NewsFeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsFeedCell.xib; sourceTree = "<group>"; };
 		D0BC66FD25E9B1C3002D2421 /* WebImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImageView.swift; sourceTree = "<group>"; };
 		D0BC66FF25EAB744002D2421 /* NewsFeedCellLayoutCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedCellLayoutCalculator.swift; sourceTree = "<group>"; };
 		D0BC670125EACC35002D2421 /* StringPlusHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringPlusHeight.swift; sourceTree = "<group>"; };
@@ -205,8 +201,6 @@
 		D0BC66F825E830D0002D2421 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				D0BC66F925E830E1002D2421 /* NewsFeedCell.swift */,
-				D0BC66FB25E83127002D2421 /* NewsFeedCell.xib */,
 				D0BC670325EAE4A4002D2421 /* NewsFeedCodeCell.swift */,
 				D0BC670925EAF3B6002D2421 /* Constants.swift */,
 				D0BC66FF25EAB744002D2421 /* NewsFeedCellLayoutCalculator.swift */,
@@ -326,7 +320,6 @@
 			files = (
 				D0BC66F725E816E6002D2421 /* NewsFeedViewController.storyboard in Resources */,
 				D0BC66C525E6A3C5002D2421 /* LaunchScreen.storyboard in Resources */,
-				D0BC66FC25E83127002D2421 /* NewsFeedCell.xib in Resources */,
 				D0BC66D625E6CC46002D2421 /* AuthViewController.storyboard in Resources */,
 				D0BC66C225E6A3C5002D2421 /* Assets.xcassets in Resources */,
 				D0BC672625EDA129002D2421 /* Localizable.stringsdict in Resources */,
@@ -385,7 +378,6 @@
 				D0BC670225EACC35002D2421 /* StringPlusHeight.swift in Sources */,
 				D0ECA96A25F139C200D1D7EC /* Constraints.swift in Sources */,
 				D0BC66F225E811DF002D2421 /* NewsFeedModels.swift in Sources */,
-				D0BC66FA25E830E1002D2421 /* NewsFeedCell.swift in Sources */,
 				D0BC670D25EBEE2C002D2421 /* GalleryCollectionView.swift in Sources */,
 				D0BC66F325E811DF002D2421 /* NewsFeedViewController.swift in Sources */,
 				D0BC672825EDA6D7002D2421 /* GradientView.swift in Sources */,

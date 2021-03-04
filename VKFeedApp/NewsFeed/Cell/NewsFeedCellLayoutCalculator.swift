@@ -23,29 +23,25 @@ protocol NewsFeedCellLayoutCalculatorProtocol {
 final class NewsFeedCellLayoutCalculator: NewsFeedCellLayoutCalculatorProtocol {
     
     private let screenWidth: CGFloat
-    
+
     init(screenWidth: CGFloat = min(UIScreen.main.bounds.width, UIScreen.main.bounds.height)) {
         self.screenWidth = screenWidth
     }
     
     func sizes(postText: String?, photoAttachments: [FeedCellPhotoAttachmentViewModel], isFullSizePost: Bool) -> FeedCellSizes {
-        
         var showMoreText = false
         let cardViewWidth = screenWidth - Constants.cardInsets.left - Constants.cardInsets.right
         var postLabelFrame = CGRect(origin: CGPoint(x: Constants.postLabelInsets.left, y: Constants.postLabelInsets.top), size: CGSize.zero)
-        
         if let text = postText, !text.isEmpty {
             let width = cardViewWidth - Constants.postLabelInsets.left - Constants.postLabelInsets.right
             var height = text.height(width: width, font: Constants.postLabelFont)
             let limitHeight = Constants.postLabelFont.lineHeight * Constants.minifiedPostLimitLines
-            
             if !isFullSizePost && height > limitHeight {
                 height = Constants.postLabelFont.lineHeight * Constants.minifiedPostLines
                 showMoreText = true
             }
             postLabelFrame.size = CGSize(width: width, height: height)
         }
-        
         var moreTextButtonSize = CGSize.zero
         if showMoreText {
             moreTextButtonSize = Constants.moreTextButtonSize

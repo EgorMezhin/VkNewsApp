@@ -39,7 +39,6 @@ class NewsFeedPresenter: NewsFeedPresentationLogic {
         }
     }
     
-    
     private func cellViewModel(from feedItem: FeedItem, profiles: [Profile], groups: [Group], revealPostIds: [Int]) -> FeedViewModel.Cell {
         let date = Date(timeIntervalSince1970: feedItem.date)
         let dateTitle = dateFormatter.string(from: date)

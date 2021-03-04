@@ -54,12 +54,10 @@ struct FeedViewModel {
         var width: Int
         var height: Int
     }
-    
     let cells: [Cell]
     let footerTitle: String?
 }
 
 struct UserViewModel: TitleViewViewModel {
     var photoUrlString: String?
-    
 }

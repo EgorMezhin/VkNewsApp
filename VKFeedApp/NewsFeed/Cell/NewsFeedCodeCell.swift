@@ -42,7 +42,9 @@ protocol NewsFeedCodeCellDelegate: class {
 final class NewsFeedCodeCell: UITableViewCell {
     
     static let reuseId = "NewsFeedCodeCell"
+    
     weak var delegate: NewsFeedCodeCellDelegate?
+    
     let cardView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -50,11 +52,13 @@ final class NewsFeedCodeCell: UITableViewCell {
         view.layer.cornerRadius = 10
         return view
     }()
+    
     let topView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    
     let postLabel: UITextView = {
         let textView = UITextView()
         textView.font = Constants.postLabelFont
@@ -62,13 +66,12 @@ final class NewsFeedCodeCell: UITableViewCell {
         textView.isSelectable = true
         textView.isUserInteractionEnabled = true
         textView.isEditable = false
-        
         let padding = textView.textContainer.lineFragmentPadding
         textView.textContainerInset = UIEdgeInsets.init(top: 0, left: -padding, bottom: 0, right: -padding)
-        
         textView.dataDetectorTypes = UIDataDetectorTypes.all
         return textView
     }()
+    
     let moreTextButton: UIButton = {
         let button = UIButton()
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .medium)
@@ -78,22 +81,27 @@ final class NewsFeedCodeCell: UITableViewCell {
         button.setTitle("Show more...", for: .normal)
         return button
     }()
+    
     let galleryCollectionView = GalleryCollectionView()
+    
     let postImageView: WebImageView = {
         let imageView = WebImageView()
         imageView.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
         return imageView
     }()
+    
     let bottomView: UIView = {
         let view = UIView()
         return view
     }()
+    
     let iconImageView: WebImageView = {
         let imageView = WebImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.backgroundColor = .clear
         return imageView
     }()
+    
     let nameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -102,6 +110,7 @@ final class NewsFeedCodeCell: UITableViewCell {
         label.textColor = #colorLiteral(red: 0.1961038411, green: 0.1960522234, blue: 0.2003527582, alpha: 1)
         return label
     }()
+    
     let dateLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -109,51 +118,59 @@ final class NewsFeedCodeCell: UITableViewCell {
         label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
+    
     let likeNumberView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    
     let commentNumberView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    
     let shareNumberView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    
     let viewNumberView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    
     let likeImage: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(named: "like")
         return imageView
     }()
+    
     let commentImage: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(named: "comment")
         return imageView
     }()
+    
     let shareImage: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(named: "share")
         return imageView
     }()
+    
     let viewImage: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(named: "eye")
-        
         return imageView
     }()
+    
     let likeLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -163,6 +180,7 @@ final class NewsFeedCodeCell: UITableViewCell {
         label.text = "423"
         return label
     }()
+    
     let commentLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -172,6 +190,7 @@ final class NewsFeedCodeCell: UITableViewCell {
         label.text = "67"
         return label
     }()
+    
     let shareLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -181,6 +200,7 @@ final class NewsFeedCodeCell: UITableViewCell {
         label.text = "4"
         return label
     }()
+    
     let viewLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -198,7 +218,6 @@ final class NewsFeedCodeCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
         iconImageView.layer.cornerRadius = Constants.topViewHeight / 2
         iconImageView.clipsToBounds = true
         cardView.layer.cornerRadius = 10
@@ -337,7 +356,6 @@ final class NewsFeedCodeCell: UITableViewCell {
     }
     
     private func constraintInFourthLayer(view: UIView, imageView: UIImageView, label: UILabel) {
-        
         imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8).isActive = true
         imageView.widthAnchor.constraint(equalToConstant: Constants.buttonViewViewsIconSize).isActive = true

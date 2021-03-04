@@ -16,9 +16,11 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic, NewsFeedCo
     
     var interactor: NewsFeedBusinessLogic?
     var router: (NSObjectProtocol & NewsFeedRoutingLogic)?
+    
     private var feedViewModel = FeedViewModel.init(cells: [], footerTitle: nil)
     private var titleView = TitleView()
     private lazy var footerView = FooterView()
+    
     private var refreshControlIndicator: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
@@ -28,7 +30,6 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic, NewsFeedCo
     @IBOutlet weak var table: UITableView!
     
     // MARK: Setup
-    
     private func setup() {
         let viewController        = self
         let interactor            = NewsFeedInteractor()
@@ -42,7 +43,6 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic, NewsFeedCo
     }
     
     // MARK: View lifecycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -55,11 +55,9 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic, NewsFeedCo
     private func setupTable() {
         let topInset: CGFloat = 8
         table.contentInset.top = topInset
-       // table.register(UINib(nibName: "NewsFeedCell", bundle: nil), forCellReuseIdentifier: NewsFeedCell.reuseIdentifier)
         table.register(NewsFeedCodeCell.self, forCellReuseIdentifier: NewsFeedCodeCell.reuseId)
         table.separatorStyle = .none
         table.backgroundColor = .clear
-        
         table.addSubview(refreshControlIndicator)
         table.tableFooterView = footerView
     }
